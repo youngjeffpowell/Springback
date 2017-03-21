@@ -1,0 +1,23 @@
+springback:
+  build: .
+  container_name: springback
+  ports:
+    - "4282:4282"
+    - "4283:4283"
+    - "4285:4285"
+    - "4286:4286"
+  volumes_from:
+    - data
+data:
+  image: busybox:1.26.2
+  container_name: springback_data
+  volumes:
+    # Log files
+    - /var/log/proserver
+    # Default backup destination
+    - /var/opt/proserver
+    # System settings and binarys
+    - /opt/proserver
+    # Using synology local disk space outside container.
+    #- /volume1/code42/:/opt/code42
+  command: /bin/echo
