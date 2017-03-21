@@ -19,4 +19,5 @@ VOLUME ["/var/log/proserver”,”/var/opt/proserver”,”/opt/proserver”]
  #Copying proserver.sh install and start script
  #Crashplan downlaods for the first time
 COPY ./proserver.sh /
+RUN chmod +x /proserver.sh
 ENTRYPOINT ["/proserver.sh"]
