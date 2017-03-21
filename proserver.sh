@@ -10,7 +10,7 @@ then
     echo "Download Code42 Server (CrashPlanPROServer)"
     curl -fSL -o /tmp/Code42server_Linux.tgz https://download.code42.com/installs/proserver/${VERSION}/Code42server_${VERSION}_Linux.tgz
     echo "Unpacking Code42 Server (CrashPlanPROServer)"
-    echo "$MD5HASH  /tmp/Code42server_Linux.tgz" | md5sum -c - &&\
+    echo "$MD5HASH  /tmp/Code42server_Linux.tgz" |
     tar -xzf /tmp/Code42server_Linux.tgz -C $INSTALLDIR --strip-components 1 &&\
     rm -f /tmp/Code42server_Linux.tgz
     echo "Starting installation of CrashPlanPROServer v$VERSION!"
